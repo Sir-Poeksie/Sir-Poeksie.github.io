@@ -186,13 +186,13 @@ body.dark-mode {
   51%, 100% { opacity: 0; }
 }
 
-/* Vertical Side Toggle (Bottom Left, Outside Border) */
+/* Vertical Side Toggle (Bottom Left, Outside Border) 
 .mode-toggle-vertical {
   position: fixed;
   bottom: 2rem;
   left: 0;
   writing-mode: vertical-rl;
-  transform: rotate(180deg); /* Flip to write bottom to top */
+  transform: rotate(180deg); /* Flip to write bottom to top 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -200,6 +200,23 @@ body.dark-mode {
   font-size: 0.8rem;
   background: transparent;
   padding: 0.5rem;
+  color: var(--main-text);
+  z-index: 1000;
+}*/
+
+.mode-toggle-vertical {
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  background: transparent;
+  padding: 1rem 0.5rem; /* Increased top/bottom padding */
   color: var(--main-text);
   z-index: 1000;
 }
@@ -262,7 +279,7 @@ body.dark-mode {
 
 /* Header */
 .main-header {
-  text-align: center;
+  text-align: left;
 }
 .main-title {
   font-size: 2.5rem;
@@ -292,6 +309,11 @@ body.dark-mode {
   text-decoration: none; /* Removes any default underline on hover (optional
 }
 
+/* Style for visited links */
+a:visited {
+  color: var(--main-text, white); /* Use your desired visited link color */
+  text-decoration: none; /* Remove the underline */
+}
 /* Page Sections */
 .page-section {
   display: none;
@@ -299,4 +321,109 @@ body.dark-mode {
 }
 .page-section.active {
   display: block;
+}
+
+#movie-credits {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: right;
+  color: var(--main-text, white);
+  font-family: monospace;
+  overflow: hidden;
+  transform: translateY(100%);
+  animation: movieCredits 15s linear forwards; /* Adjust duration as needed */
+  width: 50vw; /* Set width to 50% of the viewport width */
+  max-width: 600px; /* Optional: Set a maximum width */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  padding-right: 20px; /* Add some right padding to avoid navbar overlap */
+  /* Optional background */
+  /* background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 5px; */
+}
+
+#movie-credits main#content {
+  margin: 0;
+}
+
+#movie-credits main#content p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.9rem; /* Adjust font size as needed */
+}
+
+@keyframes movieCredits {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/*
+#movie-credits {
+  position: fixed;
+  bottom: 20px; /* Adjust distance from the bottom */
+  right: 20px; /* Adjust distance from the right */
+  text-align: right; /* Align text to the right */
+  color: var(--main-text, white); /* Use your text color variable */
+  font-family: monospace;
+  overflow: hidden; /* Hide text that goes beyond the container during animation */
+  transform: translateY(100%); /* Start below the visible area */
+  animation: movieCredits 15s linear forwards; /* Adjust duration based on text length */
+  width: 40%; /* Adjust width as needed */
+  max-width: 600px; /* Set a maximum width if desired */
+  /* Optional: Add a subtle background for better readability */
+  /* background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 5px; 
+}
+
+#movie-credits main#content {
+  margin: 0; /* Remove default main margins 
+}
+
+#movie-credits main#content p {
+  margin: 0; /* Remove default paragraph margins 
+  line-height: 1.6; /* Adjust line spacing for readability 
+}
+
+@keyframes movieCredits {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(0); /* Stop at the bottom right 
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} */
+
+ /* Style for visited links */
+a:visited {
+  color: var(--main-text, white); /* Change to your desired visited link color */
+  text-decoration: none; /* Remove the underline */
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0; /* Add some top and bottom padding */
+  color: var(--main-text);
 }
