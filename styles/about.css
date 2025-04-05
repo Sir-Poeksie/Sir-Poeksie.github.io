@@ -1,0 +1,20 @@
+body {
+    background-color: #121212;
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+.bio {
+    text-align: center;
+}
+
+.bio img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}

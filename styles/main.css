@@ -1,0 +1,111 @@
+body {
+    background-color: #0F0F1F;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Profile Image Circle with Glow */
+  .profile-container {
+    margin-top: 40px;
+  }
+  
+  .profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #B388FF;
+    animation: glow 2s infinite alternate;
+    object-fit: cover;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 5px #B388FF;
+    }
+    to {
+      box-shadow: 0 0 20px #B388FF, 0 0 30px #B388FF80;
+    }
+  }
+  
+  /* Typing Text */
+  #typed-text {
+    font-size: 20px;
+    margin-top: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  
+  /* Heatmap */
+  #heatmap-section {
+    margin-top: 50px;
+  }
+  #github-heatmap {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  /* Project Tiles */
+  .project-tiles {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+  }
+  
+  .tile {
+    width: 200px;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .tile:hover {
+    transform: scale(1.05);
+  }
+  
+  .tile .overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .tile:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* Tetris Preview Grid */
+  #tetris-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    gap: 2px;
+    justify-content: center;
+    padding: 20px;
+    background: #111;
+    margin: 30px auto;
+    border-radius: 10px;
+  }
+  .block {
+    background: linear-gradient(135deg, #00F5A0, #00D9F5);
+    font-size: 9px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff2;
+  }
+  
