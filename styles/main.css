@@ -1,3 +1,4 @@
+/*
 body {
     background-color: #0F0F1F;
     color: white;
@@ -7,7 +8,7 @@ body {
     padding: 0;
   }
   
-  /* Profile Image Circle with Glow */
+   Profile Image Circle with Glow 
   .profile-container {
     margin-top: 40px;
   }
@@ -30,7 +31,7 @@ body {
     }
   }
   
-  /* Typing Text */
+   Typing Text 
   #typed-text {
     font-size: 20px;
     margin-top: 20px;
@@ -41,7 +42,7 @@ body {
     margin: 0 auto;
   }
   
-  /* Heatmap */
+   Heatmap 
   #heatmap-section {
     margin-top: 50px;
   }
@@ -50,7 +51,7 @@ body {
     margin: auto;
   }
   
-  /* Project Tiles */
+   Project Tiles 
   .project-tiles {
     display: flex;
     justify-content: center;
@@ -88,7 +89,7 @@ body {
     opacity: 1;
   }
   
-  /* Tetris Preview Grid */
+   Tetris Preview Grid 
   #tetris-grid {
     display: grid;
     grid-template-columns: repeat(10, 30px);
@@ -109,3 +110,193 @@ body {
     border: 1px solid #fff2;
   }
   
+*/
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+body.light-mode {
+  --main-bg: #f9f9f9;
+  --main-text: #060606;
+  --border-color: black;
+}
+
+body.dark-mode {
+  --main-bg: #060606;
+  --main-text: #f9f9f9;
+  --border-color: white;
+}
+
+/* Intro Screen 
+.intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #151517;
+  color: #f7f8f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  font-size: 2rem;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}*/
+
+.intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #151517;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.3) 2px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 3px, transparent 3px);
+  background-size: 50px 50px, 70px 70px, 30px 30px, 90px 90px; /* Adjust star density and size */
+  background-position: 0 0, 10% 10%, 30% 30%, 60% 60%; /* Adjust star positions */
+  color: #f7f8f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  font-size: 2rem;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+#typedText span.gray {
+  color: gray;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Vertical Side Toggle (Bottom Left, Outside Border) */
+.mode-toggle-vertical {
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg); /* Flip to write bottom to top */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  background: transparent;
+  padding: 0.5rem;
+  color: var(--main-text);
+  z-index: 1000;
+}
+
+.mode-toggle-vertical label {
+  transform: rotate(180deg); /* Keep text readable */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* Main Content Container 
+.bordered-container {
+  background-color: var(--main-bg);
+  color: var(--main-text);
+  margin: 2vw;
+  border: 3px solid var(--border-color);
+  padding: 2rem;
+  min-height: 95vh;
+  transition: all 0.3s ease;
+  position: relative;
+}*/
+.bordered-container {
+  margin: 2vw;
+  border: 3px solid var(--border-color);
+  padding: 2rem;
+  min-height: 95vh;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Starry night pattern for dark mode (default) */
+.bordered-container {
+  background-color: var(--main-bg, #000); /* Default to black if --main-bg is not defined */
+  color: var(--main-text);
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.15) 2px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 3px, transparent 3px);
+  background-size: 50px 50px, 70px 70px, 30px 30px, 90px 90px;
+  background-position: 0 0, 10% 20%, 30% 15%, 70% 80%;
+}
+
+/* Starry night pattern for light mode */
+@media (prefers-color-scheme: light) {
+  .bordered-container {
+    background-color: var(--main-bg, #fff); /* Default to white if --main-bg is not defined in light mode */
+    color: var(--main-text, #000); /* Default text to black in light mode */
+    background-image:
+      radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+      radial-gradient(circle, rgba(0, 0, 0, 0.075) 2px, transparent 2px),
+      radial-gradient(circle, rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+      radial-gradient(circle, rgba(0, 0, 0, 0.1) 3px, transparent 3px);
+    background-size: 50px 50px, 70px 70px, 30px 30px, 90px 90px;
+    background-position: 0 0, 10% 20%, 30% 15%, 70% 80%;
+  }
+}
+
+/* Header */
+.main-header {
+  text-align: center;
+}
+.main-title {
+  font-size: 2.5rem;
+  font-family: 'Segoe UI', sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+/* Nav */
+.sidebar-nav {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.sidebar-nav ul {
+  list-style: none;
+}
+.sidebar-nav li {
+  margin: 0.6rem 0;
+}
+.sidebar-nav a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: var(--main-text);
+  transition: color 0.3s;
+}
+.sidebar-nav a:hover {
+  color: #808080; /* Changes the text color to grey on hover */
+  text-decoration: none; /* Removes any default underline on hover (optional
+}
+
+/* Page Sections */
+.page-section {
+  display: none;
+  padding: 2rem 0;
+}
+.page-section.active {
+  display: block;
+}

@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +11,9 @@
   <script defer src="scripts/tetris.js"></script>
 </head>
 <body>
-    <!--
+    
      <header>
-       <a href="i"><h1 class="site-title">Sir Poeksie</h1>
+       <a href="index.html"><h1 class="site-title">Sir Poeksie</h1>
         <nav></a>
             <ul>
                 <li><a href="about.html">About</a></li>
@@ -35,8 +36,7 @@
         <h2>About Me</h2>
         <p>Strategic thinker, AI developer, and entrepreneur redefining tech and fashion.</p>
     </section>
-
-    -->
+    
     <nav>
 
     </nav>
@@ -70,9 +70,62 @@
   <section>
     <h2>Skill Game Preview</h2>
     <div id="tetris-grid">
-      <!-- Auto-dropping blocks appear here -->
+       Auto-dropping blocks appear here 
     </div>
   </section>
 </body>
 </html>
+-->
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sir Poeksie - Portfolio</title>
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body class="dark-mode"> <!-- Default to dark mode -->
+
+  <!-- Intro Screen -->
+  <div class="intro-screen" id="introScreen">
+    <h1><span id="typedText"></span><span class="cursor">|</span></h1>
+  </div>
+
+  <!-- Light/Dark Toggle (Vertical outside border) -->
+  <div class="mode-toggle-vertical">
+    <label><input type="checkbox" id="lightModeToggle" /> Light</label>
+    <label><input type="checkbox" id="darkModeToggle" checked /> Dark</label>
+  </div>
+
+  <!-- Main Portfolio Container -->
+  <div class="bordered-container">
+    <header class="main-header">
+      <a href="index.html"><h1 class="main-title">Sir Poeksie</h1></a>
+      <h4>Developer • Innovator • Brand Architect</h4>
+    </header>
+
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main id="content">
+      <section id="home" class="page-section active">Welcome to my portfolio!</section>
+      <section id="about" class="page-section">About me section...</section>
+      <section id="skills" class="page-section">Skills go here...</section>
+      <section id="projects" class="page-section">Project showcase...</section>
+      <section id="contact" class="page-section">Contact form coming soon...</section>
+    </main>
+  </div>
+
+  <script src="/scripts/script.js"></script>
+  <script src="/scripts/dark-mode.js"></script>
+</body>
+</html>
